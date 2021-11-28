@@ -1,0 +1,38 @@
+digraph G {
+node [shape=box];
+"robot_footprint" [label="robot_footprint"];
+"chassis" [label="chassis"];
+"back_left_wheel_shaft" [label="back_left_wheel_shaft"];
+"back_left_wheel" [label="back_left_wheel"];
+"back_right_wheel_shaft" [label="back_right_wheel_shaft"];
+"back_right_wheel" [label="back_right_wheel"];
+"camera" [label="camera"];
+"front_sensor" [label="front_sensor"];
+"left_wheel_shaft" [label="left_wheel_shaft"];
+"left_wheel" [label="left_wheel"];
+"right_wheel_shaft" [label="right_wheel_shaft"];
+"right_wheel" [label="right_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"robot_footprint" -> "robot_footprint_joint" [label="xyz: 0 0 0.05 \nrpy: 0 -0 0"]
+"robot_footprint_joint" -> "chassis"
+"chassis" -> "back_left_wheel_shaft_joint" [label="xyz: -0.15 -0.032 0 \nrpy: 3.14159 -0 0"]
+"back_left_wheel_shaft_joint" -> "back_left_wheel_shaft"
+"back_left_wheel_shaft" -> "back_left_wheel_hinge" [label="xyz: 0 0.042 0 \nrpy: 0 -0 0"]
+"back_left_wheel_hinge" -> "back_left_wheel"
+"chassis" -> "back_right_wheel_shaft_joint" [label="xyz: -0.15 0.108 0 \nrpy: 0 -0 0"]
+"back_right_wheel_shaft_joint" -> "back_right_wheel_shaft"
+"back_right_wheel_shaft" -> "back_right_wheel_hinge" [label="xyz: 0 0.042 0 \nrpy: 0 -0 0"]
+"back_right_wheel_hinge" -> "back_right_wheel"
+"chassis" -> "camera_joint" [label="xyz: 0.06 0.04 0.06 \nrpy: 0 -0 0"]
+"camera_joint" -> "camera"
+"chassis" -> "front_sensor_joint" [label="xyz: 0.06 0.04 0.02 \nrpy: 0 -0 0"]
+"front_sensor_joint" -> "front_sensor"
+"chassis" -> "left_wheel_shaft_joint" [label="xyz: 0.005 -0.032 0 \nrpy: 3.14159 -0 0"]
+"left_wheel_shaft_joint" -> "left_wheel_shaft"
+"left_wheel_shaft" -> "left_wheel_hinge" [label="xyz: 0 0.042 0 \nrpy: 0 -0 0"]
+"left_wheel_hinge" -> "left_wheel"
+"chassis" -> "right_wheel_shaft_joint" [label="xyz: 0.005 0.108 0 \nrpy: 0 -0 0"]
+"right_wheel_shaft_joint" -> "right_wheel_shaft"
+"right_wheel_shaft" -> "right_wheel_hinge" [label="xyz: 0 0.042 0 \nrpy: 0 -0 0"]
+"right_wheel_hinge" -> "right_wheel"
+}
